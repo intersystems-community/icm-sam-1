@@ -1,9 +1,6 @@
 #!/bin/bash
 
 # variables declaration-------------------
-#icmContainer=intersystems/icm:2020.3.0XDBC.132.0
-#icmContainer=intersystems/icm:2020.3.0-dev
-#2020.3.0-dev
 source ./env-config.sh
 #-----------------------------------------
 

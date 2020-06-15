@@ -23,10 +23,6 @@
 
 # variables declaration-------------------------
 # see env-config.sh
-# for tuneable variables
-#
-#icmContainer=intersystems/icm:2020.3.0-dev
-#pingTimeout=3
 source ./env-config.sh
 #-----------------------------------------------
 
@@ -174,10 +170,6 @@ do
     -e getIRISkey=$rmIkey \
     $icmContainer \
     /bin/sh -c 'ntpd -dp pool.ntp.org; if [[ "$getIRISkey" -eq 1 ]]; then ./keygenAll.sh; else ./keygen-ssh-tls.sh; fi;'
-    # ntpd -dp pool.ntp.org; 
-    # 'keygenSSH.sh ./ssh/; keygenTLS.sh ./tls/; if [[ $getIRISkey -eq 1 ]]; then getLicenses.sh ./ikey/; fi'
-    #'keygenSSH.sh ./ssh/; keygenTLS.sh ./tls/; env'
-    #if [[ $getIRISkey -eq 1 ]]; then getLicenses.sh ./ikey/; fi'
   
   # interactive for testing...
   #docker run --rm --name $containerName -v $PWD:/$clusterDir --cap-add SYS_TIME --workdir /$clusterDir -it $icmContainer
@@ -187,7 +179,7 @@ done
 
 printf "\nEnvironment cleaned up & prepared\n"
 
-# Serial implementation for now; slow but screen-verifiable
+# Serial implementation for now; slow but screen-verifiable/debuggale
 # ( ( command & ) )
 
 # Cloud provisioning_________________________________

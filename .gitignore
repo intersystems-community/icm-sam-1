@@ -1,0 +1,4 @@
+# ignoring the JSON subdir as it's used for testing when no expensive cloud clusters are available
+/prep
+readme.txt
+

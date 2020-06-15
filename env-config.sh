@@ -1,5 +1,4 @@
 #!/bin/bash
-#
 # configurable environment variables
 
 export icmContainer=intersystems/icm:2020.3.0-dev

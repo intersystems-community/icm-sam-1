@@ -7,7 +7,6 @@
 set -euo pipefail
 
 # variables declaration-------------------------
-#SAMcredentials="_SYSTEM:aaa"
 source ./env-config.sh
 #-----------------------------------------------
 
@@ -31,7 +30,6 @@ checkStatus()
 # [ { "error": "ERROR #26112: Cluster 'test-2' already exists.", "code": 26112, "domain": "%ObjectErrors", "id": "SAMClusterAlreadyExists", "params": [ "test-2" ] } ] ERROR #26112: Cluster 'test-2' already exists.
 # rtnStatus or return_Status is set in createClusters()
 # 
-#printf "\n\nin checkStatus()..."
 # ~ means pattern-matching
 if [[ ! "$rtnJSON" =~ ^[0-9]+$ ]]
 then
@@ -43,8 +41,6 @@ fi
 
 createClusters()
 {
-#printf "\nIn directory for cluster %s\n" $(basename $(pwd))
-
 if [ ! -s instances.json ]
 then
 	printf "\n\nIn directory [%s]; the file 'instances.json' does not exist or is empty." $clusterDir
@@ -156,7 +152,7 @@ createTargets()
 	jsonPOSTstr="{ \"name\": \"${instName}\", \"description\": \"Instance ${instName}\", \"cluster\": ${newClusterId}, \"instance\": \"${target}\" }"
 	
 	rtnJSON=$(curl -s -X POST -H 'Content-type: application/json' -u $SAMcredentials http://localhost:8080/api/sam/admin/target -d "$jsonPOSTstr" | jq -r -c '.[]')
-	# curl -s -X POST -H 'Content-type: application/json' -u _SYSTEM:aaa http://localhost:8080/api/sam/admin/target -d '{ "name": "test-1", "description": "Instance test-1", "cluster": 19, "instance": "bla.com:52773" }' | jq -r -c '.[]'
+	# curl -s -X POST -H 'Content-type: application/json' -u _SYSTEM:blaa http://localhost:8080/api/sam/admin/target -d '{ "name": "test-1", "description": "Instance test-1", "cluster": 19, "instance": "bla.com:52773" }' | jq -r -c '.[]'
 	checkStatus
 }
 

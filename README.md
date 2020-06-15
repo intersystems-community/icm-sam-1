@@ -4,22 +4,24 @@
 
 This is an example of cloud provisioning of InterSystems IRIS clusters in four different AWS regions with [ICM](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GICM) and the automated configuration of [System Alerting and Monitoring or SAM](https://github.com/intersystems-community/sam), via its REST API.
 
-This code was used for demos. Although it showcase the power of ICM and the flexibility of SAM and its REST API, it is intended as demoware for 
-- ICM
-- SAM
-- container usage & 
-- scripting solutions
+This code was used for demos. Although it showcase the power of ICM and the flexibility of SAM and its REST API, it is intended as demoware for  
+- ICM  
+- SAM  
+- container usage &  
+- scripting solutions  
+
+![](./img/1-SAM-cluster-singlenodeissue.jpg)
 
 ### Production considerations 
-For production environments the user must consider more attentively security, high availability and performance and review options like 
-- a bastion
+For production environments the user must consider more attentively security, high availability and performance and review options like  
+- a bastion  
   ```
   {
  	"Role": "VM",
 	"Count": "1",
 	"Bastion": "true"
     }
-  ```
+  ```  
 - keep the backend services in a private subnet (note that this is automated for you if you ask for a bastion as above)
   ```
   "PrivateSubnet": "true"
@@ -48,7 +50,7 @@ For production environments the user must consider more attentively security, hi
 - Have the InterSystems Cloud Manager (ICM) container
   - please tune accordingly the ```env-config.sh``` script
 
-- Alls variables declaration are in the script ```env-config.sh```. Make sure to use containers and credentials in accordance to your environment. The configuration variables deal with 
+- All variables declaration are in the script ```env-config.sh```. Make sure to use containers and credentials in accordance to your environment. The configuration variables deal with 
   - the ICM container tag name
   - SAM credentials and
   - a timeout  
@@ -60,7 +62,7 @@ For production environments the user must consider more attentively security, hi
       - ```DockerUsername``` and 
       - ```DockerPassword```
   - SAM credentials
-    - Edit the variable ```SAMcredentials="_SYSTEM:aaa"``` in the ```env-config.sh``` file as described above
+    - Edit the variable ```SAMcredentials="_SYSTEM:myBestPassword"``` in the ```env-config.sh``` file as described above
      
 - Keys & certificates
   - Temporary TLS certificates and ssh keys are generated at each run

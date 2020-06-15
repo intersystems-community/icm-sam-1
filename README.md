@@ -2,7 +2,7 @@
 
 ## Intro
 
-This is an example of cloud provisioning of InterSystems IRIS clusters in four different AWS regions with [ICM](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GICM) and the automated configuration of [System Alerting and Monitoring or SAM](https://github.com/intersystems-community/sam), via its REST API.
+This is an example of cloud provisioning of InterSystems IRIS clusters in four different AWS regions with [ICM](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GICM) and the automated configuration of [System Alerting and Monitoring or SAM](https://docs.intersystems.com/sam/csp/docbook/Doc.View.cls?KEY=ASAM), via its REST API.
 
 This code was used for demos. Although it showcase the power of ICM and the flexibility of SAM and its REST API, it is intended as demoware for  
 - ICM  
@@ -10,7 +10,7 @@ This code was used for demos. Although it showcase the power of ICM and the flex
 - container usage &  
 - scripting solutions  
 
-![SAM screenshot](./img/1-SAM-cluster-singlenodeissue.jpg)
+![SAM screenshot](/img/1-SAM-cluster-singlenodeissue.jpg)
 
 ### Production considerations 
 For production environments the user must consider more attentively security, high availability and performance and review options like  

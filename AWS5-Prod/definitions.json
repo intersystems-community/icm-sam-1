@@ -1,0 +1,13 @@
+[
+    {
+	"Role": "DATA",
+	"Count": "6",
+	"LicenseKey": "ubuntu-sharding-iris.key"
+    },
+    {
+	"Role": "COMPUTE",
+	"LicenseKey": "ubuntu-sharding-iris.key",
+	"Count": "6",
+	"StarCount": "20"
+    }
+]

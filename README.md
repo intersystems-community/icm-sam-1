@@ -10,7 +10,7 @@ This code was used for demos. Although it showcase the power of ICM and the flex
 - container usage &  
 - scripting solutions  
 
-![SAM screenshot](zrml.github.com/intersystems-community/icm-sam-1/img/1-SAM-cluster-singlenodeissue.jpg)
+![SAM screenshot](img/#1-SAM-cluster-singlenodeissue.jpg)
 
 ### Production considerations 
 For production environments the user must consider more attentively security, high availability and performance and review options like  

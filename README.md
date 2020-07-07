@@ -1,8 +1,8 @@
-# An example of AWS clusters-provisioning and monitoring with ICM and SAM automation
+# Example of SAM monitoring population via its REST API against AWS clusters provisioned with ICM
 
 ## Intro
 
-This is an example of cloud provisioning of InterSystems IRIS clusters in four different AWS regions with [ICM](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GICM) and the automated configuration of [System Alerting and Monitoring or SAM](https://docs.intersystems.com/sam/csp/docbook/Doc.View.cls?KEY=ASAM), via its REST API.
+This is an example of automation of cloud provisioning of InterSystems IRIS clusters in four different AWS regions with [ICM](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GICM) and the automated configuration of [System Alerting and Monitoring or SAM](https://docs.intersystems.com/sam/csp/docbook/Doc.View.cls?KEY=ASAM), via its REST API, for monitoring all those instances.
 
 This code was used for demos. Although it showcase the power of ICM and the flexibility of SAM and its REST API, it is intended as demoware for  
 - ICM  
@@ -57,6 +57,7 @@ For production environments the user must consider more attentively security, hi
 
 - Credentials:  
   - AWS credentials must be provided in a file; you'll be asked to provide the file name. There is a default credentials file in the root directory called  ```aws.credentials```. Amend it accordingly.  
+    - make sure the credentials have privileges to run on multiple AWS Regions or tune accordingly the ./AWS*/defaults.json or remove/rename the ./AWS* directories   
   - Docker Hub (or your registry) credentials are needed for ICM to pull containers from the registry to the various AWS regions. The registry must obviously be accessible from the AWS regions specified.
     - Edit the ```defaults.json``` file in each _AWS*_ subdirectory and override the dummy entries in the JSON keys:
       - ```DockerUsername``` and 
